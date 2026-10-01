@@ -1,0 +1,52 @@
+export const projects = [
+  {
+    id: 1,
+    slug: 'reprint',
+    name: 'RePrint',
+    tagline: 'Custom 3D Printing E-Commerce Platform',
+    description:
+      'A full-stack e-commerce platform for a custom 3D printing studio. Customers can browse a catalogue, manage a cart and wishlist, submit custom design requests, and book consultations. Staff and admins get dedicated portals for dashboards, orders, inventory, print queues, and team management.',
+    role: 'Full-Stack Developer',
+    stack: ['Vue 3', 'Vite', 'Pinia', 'Vue Router', 'Node.js', 'Express', 'MySQL', 'JWT'],
+    features: [
+      'Customer shop with cart, wishlist & checkout',
+      'Custom design request flow',
+      'Staff & admin portals with role-based access',
+      'JWT authentication with email verification',
+      'Unit test suite (Vitest)',
+      'Railway backend + Vercel frontend deployment',
+    ],
+    github: 'https://github.com/imaanabrahams/RePrint',
+    githubApi: 'https://github.com/imaanabrahams/RePrint-API',
+
+    live: 'https://reprint-kappa.vercel.app/',
+    type: 'Full-Stack',
+    status: 'live',
+    year: '2026',
+  },
+  {
+    id: 2,
+    slug: 'moderntech',
+    name: 'ModernTech HR System',
+    tagline: 'Full-Stack HR Management Portal',
+    description:
+      'A full-stack HR management system built for ModernTech Solutions to replace fragmented spreadsheet-based HR processes. Features real JWT authentication, a live dashboard with KPI charts, employee management, payroll, time-off, attendance tracking, and performance reviews — all backed by a Node.js/Express + MySQL API.',
+    role: 'Attendance Module Developer',
+    stack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Vue 3', 'Node.js', 'Express', 'MySQL', 'JWT', 'Chart.js'],
+    features: [
+      'Real JWT authentication (login, auth-guard)',
+      'Dashboard with live KPI metrics & Chart.js graphs',
+      'Employee CRUD management',
+      'Payroll runs with gross/deductions/net calculations',
+      'Attendance logging & summary API',
+      'Time-off request & approval workflow',
+    ],
+    github: 'https://github.com/chefmanie27-pixel/project-modern-tech-solutions-',
+    live: 'https://roaring-fenglisu-d675db.netlify.app/',
+    type: 'Full-Stack',
+    status: 'live',
+    year: '2026',
+    teamProject: true,
+    teamNote: 'Group project — I built the Attendance page & API module.',
+  },
+]
