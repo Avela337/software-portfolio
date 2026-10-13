@@ -9,7 +9,7 @@
         <!-- Headline -->
         <h1 class="headline fade-up visible" style="transition-delay:0.15s">
           Turning Complex<br>Problems into<br>
-          <span ">Clean Code.</span>
+          <span>Clean Code.</span>
         </h1>
 
         <!-- Sub -->
