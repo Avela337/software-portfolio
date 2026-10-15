@@ -1,5 +1,18 @@
 node_modules
 dist
+
+# env files (keep the example)
 .env
-.env.local
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
 .DS_Store
+Thumbs.db

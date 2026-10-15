@@ -68,9 +68,9 @@
 import { ref, reactive } from 'vue'
 import emailjs from '@emailjs/browser'
 
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const form = reactive({ name: '', email: '', message: '' })
 const errors = reactive({ name: '', email: '', message: '' })
@@ -91,6 +91,11 @@ async function handleSubmit() {
   successMsg.value = ''
   errorMsg.value   = ''
   if (!validate()) return
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+    console.error('EmailJS is not configured. Set VITE_EMAILJS_* in .env')
+    errorMsg.value = 'Contact form is not configured yet. Email me directly at avelagxotiwe@gmail.com'
+    return
+  }
   sending.value = true
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID,
@@ -100,6 +105,7 @@ async function handleSubmit() {
     successMsg.value = "Message sent! I'll get back to you soon."
     form.name = form.email = form.message = ''
   } catch (err) {
+    console.error('EmailJS error:', err)
     errorMsg.value = 'Something went wrong. Email me directly at avelagxotiwe@gmail.com'
   } finally {
     sending.value = false

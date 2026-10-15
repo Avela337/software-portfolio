@@ -1,5 +1,23 @@
-# Vue 3 + Vite
+# Avela Gxotiwe - Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Personal portfolio built with Vue 3, Vue Router and Vite. The contact form sends email through [EmailJS](https://www.emailjs.com).
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Setup
+
+```
+npm install
+copy .env.example .env   (then fill in your EmailJS values)
+npm run dev
+```
+
+Environment variables (see `.env.example`):
+
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+- `VITE_EMAILJS_PUBLIC_KEY`
+
+## Deploying to Vercel
+
+1. Import the GitHub repo in Vercel (framework preset: Vite, build command `npm run build`, output `dist`).
+2. Add the three `VITE_EMAILJS_*` variables under Project Settings -> Environment Variables.
+3. Deploy. `vercel.json` rewrites all routes to `index.html` so page refreshes work with Vue Router.
